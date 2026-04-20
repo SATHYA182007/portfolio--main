@@ -29,23 +29,29 @@ export default function About() {
           </motion.div>
           
           <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="relative"
           >
-            <div className="aspect-square bg-gradient-to-br from-emerald-500/10 to-blue-500/5 rounded-[3rem] border border-white/[0.05] flex items-center justify-center p-12 overflow-hidden group">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.1),transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+            <div className="aspect-[4/3] glass rounded-[3rem] flex items-center justify-center p-12 overflow-hidden group relative">
+              {/* Subtle Animated Background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-blue-500/5" />
+              <div className="absolute -top-24 -right-24 w-64 h-64 bg-emerald-500/10 blur-[100px] rounded-full group-hover:bg-emerald-500/20 transition-all duration-1000" />
+              
               <div className="text-center relative z-10">
-                <h4 className="text-7xl md:text-9xl font-bold text-white/10 mb-4 font-mono select-none transition-colors group-hover:text-emerald-500/20">OBJ</h4>
-                <p className="text-white/40 leading-relaxed font-light text-xl italic max-w-xs mx-auto">
-                  &quot;To build innovative, user-focused digital solutions that create real-world impact.&quot;
+                <div className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mx-auto mb-8 border border-white/10 group-hover:border-emerald-400/30 transition-colors">
+                  <span className="text-emerald-400 text-2xl font-serif">“</span>
+                </div>
+                <p className="text-white/60 leading-relaxed font-light text-xl italic max-w-md mx-auto">
+                  To become a skilled software developer and build innovative, <span className="text-white font-normal underline decoration-emerald-400/30 underline-offset-8">user-focused digital solutions</span> that create real-world impact.
                 </p>
               </div>
-              {/* Decorative elements */}
-              <div className="absolute top-8 right-8 w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_15px_rgba(52,211,153,0.5)]" />
-              <div className="absolute bottom-8 left-8 w-2 h-2 rounded-full bg-blue-400 shadow-[0_0_15px_rgba(96,165,250,0.5)]" />
+
+              {/* Decorative corner accents */}
+              <div className="absolute top-8 right-8 w-1 h-1 rounded-full bg-emerald-400/50 shadow-[0_0_10px_rgba(52,211,153,0.5)]" />
+              <div className="absolute bottom-8 left-8 w-1 h-1 rounded-full bg-blue-400/50 shadow-[0_0_10px_rgba(96,165,250,0.5)]" />
             </div>
           </motion.div>
         </div>
