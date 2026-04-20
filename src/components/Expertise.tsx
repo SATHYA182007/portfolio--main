@@ -5,7 +5,7 @@ export default function Expertise() {
   const tools = ["VS Code", "GitHub", "Netlify", "Supabase", "Antigravity", "Figma"];
   
   return (
-    <section className="relative z-20 py-32 px-6 md:px-12 lg:px-24">
+    <section id="expertise" className="relative z-20 py-32 px-6 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
         <motion.div
            initial={{ opacity: 0, y: 20 }}

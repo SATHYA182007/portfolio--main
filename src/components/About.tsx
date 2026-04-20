@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <section className="relative z-20 py-32 px-6 md:px-12 lg:px-24">
-      <div className="max-w-7xl mx-auto">
+    <section id="about" className="relative z-20 py-32 px-6 md:px-12 lg:px-24">
+      <div id="about-container" className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
