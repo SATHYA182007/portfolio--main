@@ -12,6 +12,8 @@ export const metadata: Metadata = {
   description: "A high-end scrollytelling personal portfolio website.",
 };
 
+import CustomCursor from "@/components/CustomCursor";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -23,7 +25,11 @@ export default function RootLayout({
       className={`${inter.variable} antialiased`}
     >
       {/* Background color of #121212 for seamless blending with sequences */}
-      <body className="min-h-full flex flex-col bg-[#121212] text-white font-sans">{children}</body>
+        <body className="min-h-full flex flex-col bg-[#0a0a0a] text-white font-sans">
+        <CustomCursor />
+        <div className="noise-overlay" />
+        {children}
+      </body>
     </html>
   );
 }

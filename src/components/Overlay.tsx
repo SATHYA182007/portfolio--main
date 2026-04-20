@@ -32,18 +32,22 @@ export default function Overlay({ scrollYProgress }: { scrollYProgress: MotionVa
         style={{ opacity: opacity1, y: y1, scale: scale1 }}
         className="absolute inset-0 flex flex-col items-center justify-center text-center px-6"
       >
-        <div className="relative">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-          >
-            <h1 className="text-5xl md:text-8xl font-bold tracking-tight text-white mb-6 drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-              Hi, I&apos;m <span className="text-emerald-400">Sathya M</span>
-            </h1>
-            <div className="w-24 h-1.5 bg-emerald-400 mx-auto rounded-full shadow-[0_0_20px_rgba(52,211,153,0.6)]" />
-          </motion.div>
-        </div>
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          className="relative"
+        >
+          <span className="text-emerald-400 font-mono text-xs tracking-[0.5em] uppercase mb-4 block opacity-60">Portfolio &apos;24</span>
+          <h1 className="text-6xl md:text-9xl font-bold tracking-tighter text-white mb-8">
+            Sathya <span className="text-zinc-500">M</span>
+          </h1>
+          <div className="flex items-center justify-center gap-4">
+            <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-white/20" />
+            <span className="text-white/40 font-light tracking-[0.2em] text-sm uppercase">Creative Developer</span>
+            <div className="h-[1px] w-12 bg-gradient-to-l from-transparent to-white/20" />
+          </div>
+        </motion.div>
       </motion.div>
 
       {/* PHASE 2 - Expertise */}
@@ -80,23 +84,31 @@ export default function Overlay({ scrollYProgress }: { scrollYProgress: MotionVa
         style={{ opacity: opacity4, y: y4 }}
         className="absolute inset-y-0 left-8 md:left-24 max-w-5xl flex flex-col items-start justify-center text-left"
       >
-        <span className="text-cyan-400 font-mono mb-4 tracking-widest uppercase text-sm">Phrase III</span>
-        <h2 className="text-3xl md:text-7xl font-bold tracking-tight text-white drop-shadow-2xl leading-tight">
-          Architecting robust solutions <br/> 
-          <span className="text-xl md:text-2xl font-light text-white/60 mb-4 block">with modern technologies:</span>
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
-             Next.js, React, Java & Tailwind CSS.
+        <span className="text-cyan-400 font-mono mb-4 tracking-[0.4em] uppercase text-xs opacity-70">Phrase III</span>
+        <h2 className="text-4xl md:text-8xl font-bold tracking-tight text-white mb-6 leading-[0.95]">
+          Architecting <br/> 
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500">
+            Robust Solutions
           </span>
         </h2>
+        <p className="text-lg md:text-xl font-light text-white/50 max-w-xl leading-relaxed">
+          Building the digital future with modern technologies like <span className="text-white font-medium">Next.js, React, Java & Tailwind CSS</span>.
+        </p>
       </motion.div>
       
       {/* Scroll Indicator */}
       <motion.div 
         style={{ opacity: useTransform(scrollYProgress, [0, 0.05], [1, 0]) }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        className="absolute bottom-12 left-1/2 -ms-px -translate-x-1/2 flex flex-col items-center gap-4"
       >
-        <span className="text-[10px] uppercase tracking-[0.3em] text-white/40 font-medium">Scroll to explore</span>
-        <div className="w-[1px] h-12 bg-gradient-to-b from-emerald-400/80 to-transparent" />
+        <span className="text-[10px] uppercase tracking-[0.4em] text-white/30 font-medium font-mono">Explore</span>
+        <div className="w-[1px] h-12 relative overflow-hidden bg-white/5">
+          <motion.div 
+            animate={{ y: [0, 48, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-transparent via-emerald-400 to-transparent"
+          />
+        </div>
       </motion.div>
       
     </div>
