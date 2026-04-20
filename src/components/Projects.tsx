@@ -10,6 +10,7 @@ const PROJECTS = [
     category: "EdTech Platform",
     description: "An educational platform designed to provide students with a better learning experience through organized courses, clean UI, and interactive learning features.",
     link: "https://edunest-sathya.netlify.app/",
+    image: "/projects/edunest.png",
   },
   {
     id: 2,
@@ -17,6 +18,7 @@ const PROJECTS = [
     category: "AI SaaS Concept",
     description: "An AI-powered SaaS concept focused on improving user productivity, learning, and smart assistance through modern technology.",
     link: "https://github.com/SATHYA182007",
+    image: null,
   },
   {
     id: 3,
@@ -24,6 +26,7 @@ const PROJECTS = [
     category: "Personal Brand",
     description: "A personal portfolio website built to showcase my skills, projects, and journey as a developer in a professional way.",
     link: "https://github.com/SATHYA182007",
+    image: null,
   },
 ];
 
@@ -57,11 +60,27 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="group relative h-[450px] overflow-hidden rounded-[2rem] bg-white/[0.02] border border-white/[0.05] p-8 hover:border-white/10 transition-all duration-500 flex flex-col justify-between"
+              className="group relative h-[450px] overflow-hidden rounded-[2rem] bg-white/[0.02] border border-white/[0.05] p-8 hover:border-white/10 transition-all duration-500 flex flex-col justify-between shadow-2xl"
             >
-              {/* Animated Gradient Background */}
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 z-0" />
-              <div className="absolute inset-0 bg-gradient-to-tr from-emerald-500/10 via-transparent to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-0" />
+              {/* Image Background */}
+              {project.image && (
+                <div className="absolute inset-0 z-0">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover opacity-30 group-hover:opacity-50 group-hover:scale-105 transition-all duration-700" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent" />
+                </div>
+              )}
+
+              {/* Animated Gradient Background fallback */}
+              {!project.image && (
+                <>
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 z-0" />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-emerald-500/10 via-transparent to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-0" />
+                </>
+              )}
               
               <div className="relative z-10">
                 <div className="flex items-center justify-between">

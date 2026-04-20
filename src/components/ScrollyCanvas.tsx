@@ -132,16 +132,16 @@ export default function ScrollyCanvas({
 
   return (
     <div ref={containerRef} className="relative w-full z-0" style={{ height: "600vh" }}>
-      <div className="sticky top-0 h-screen w-full overflow-hidden bg-[#121212]">
+      <div className="sticky top-0 h-screen w-full overflow-hidden bg-[#0a0a0a]">
         <canvas
           ref={canvasRef}
           className="absolute inset-0 block object-cover opacity-70 pointer-events-none"
           style={{ width: "100%", height: "100%" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#121212]/30 to-[#121212]/90 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0a0a]/30 to-[#0a0a0a]/90 pointer-events-none" />
         
         {!imagesLoaded && (
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#121212] z-[100] text-white font-mono text-sm tracking-widest">
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#0a0a0a] z-[100] text-white font-mono text-sm tracking-widest">
             <div className="w-48 h-[1px] bg-white/20 mb-4 overflow-hidden relative">
               <div 
                 className="absolute inset-y-0 left-0 bg-white transition-all duration-300" 
